@@ -50,11 +50,14 @@ jobs:
           java-version: '21'
           cache: 'gradle'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Accept Android SDK Licenses
+        run: |
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses || true
 
       - name: Make Gradlew Executable
-        run: chmod +x android/gradlew
+        run: |
+          chmod +x ./gradlew || true
+          chmod +x android/gradlew || true
 
       - name: Build APK with Gradle
         run: |
