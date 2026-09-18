@@ -33,11 +33,19 @@ lerna-debug.log*
 *.sw?
 
 # Android build outputs and caches (keep source files in android/)
+.gradle/
+build/
+app/build/
 android/.gradle/
 android/build/
 android/app/build/
 android/local.properties
 android/captures/
 android/.cxx/
-android/*.apk
-android/*.aab
+*.apk
+*.aab
+
+# Keep Gradle wrappers
+!gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.jar
+!android/gradle/wrapper/gradle-wrapper.jar
